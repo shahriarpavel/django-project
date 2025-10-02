@@ -1,0 +1,18 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Home - Alumnify{% endblock %}
+
+{% block content %}
+<div class="text-center">
+    {% if username %}
+        <h1>Welcome back, {{ username }}!</h1>
+        <p>Glad to see you again. Explore your alumni network.</p>
+        <a href="{% url 'logout' %}" class="btn btn-danger">Logout</a>
+    {% else %}
+        <h1>Welcome to Alumnify!</h1>
+        <p>Your alumni network starts here. Connect, share, and stay updated.</p>
+        <a href="{% url 'login' %}" class="btn btn-primary me-2">Login</a>
+        <a href="{% url 'signup' %}" class="btn btn-success">Signup</a>
+    {% endif %}
+</div>
+{% endblock %}
